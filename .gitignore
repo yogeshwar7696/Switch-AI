@@ -47,4 +47,3 @@ firebase.json
 !index.html
 !package.json
 !package-lock.json
-!.env
