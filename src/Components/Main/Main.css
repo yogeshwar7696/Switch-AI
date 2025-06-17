@@ -1,0 +1,267 @@
+.main {
+  flex: 1;
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  padding: 0 20px;
+}
+
+.main .nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  color: #585858;
+}
+
+.main .nav img {
+  /* height: 45px; */
+  /* width: 45px; */
+  width:40px;
+  height: 40px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.optionSelect {
+  cursor: pointer;
+  /* background-color: red; */
+  padding: 10px;
+  border:none;
+  border-radius:10px;
+  padding-left: 15px;
+  
+  color: #585858;
+  /* text-wrap: wrap; */
+  /* background-color: #585858; */
+}
+.optionSelect:hover {
+  background-color: #c4c7c5;
+  color: black;
+}
+
+.main-container {
+  max-width: 900px;
+  width: 100%;
+  margin: auto;
+  padding: 0 15px;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.main .greet {
+  margin: 30px 0;
+  color: #c4c7c5;
+  font-size: clamp(32px, 5vw, 60px);
+  font-weight: 600;
+  padding: 10px;
+}
+
+.main .greet span {
+  background: -webkit-linear-gradient(150deg, #4b90ff, #ff5546);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.main-bottom {
+  position: absolute;
+  bottom: 0;
+
+  width: 100%;
+  max-width: 900px;
+  padding: 0px 20px;
+  margin: auto;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  /* flex-direction: column; */
+  /* justify-content: space-between; */
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto 20px;
+  padding: 10px;
+  gap: 20px;
+  background-color: #f0f4f9;
+  border-radius: 25px;
+  border: 2px solid rgba(0, 0, 0, 0.5);
+}
+
+.search-box img {
+  width: 20px;
+  cursor: pointer;
+}
+
+.search-box input {
+  flex: 100%;
+  width: 100%;
+  justify-content: left;
+  border: none;
+  outline: none;
+  padding: 8px;
+  font-size: 18px;
+  background-color: #f0f4f9;
+}
+
+.search-box div {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.result {
+  padding: 0px 5%;
+  max-height: 70vh;
+  overflow-y: scroll;
+}
+
+.result::-webkit-scrollbar {
+  display: none;
+}
+
+.result-title {
+  margin: 40px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.result-title p {
+  padding: 7px 15px;
+  color: white;
+  background-color: rgba(88, 88, 88, 0.5);
+
+  border-radius: 15px;
+}
+.result img {
+  width: 40px;
+  border-radius: 50%;
+}
+
+.result-data {
+  display: flex;
+  align-items: start;
+  gap: 20px;
+}
+
+.loader {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.loader hr {
+  border-radius: 4px;
+  border: none;
+  background-color: #f6f7f8;
+  background: linear-gradient(
+    to right,
+    #4b90ff 20%,
+    #ff5546 50%,
+    #4b90ff 80%
+  );
+
+  background-size: 200% 100%;
+  animation: loading-gradient 1.75s ease-in-out infinite;
+  height: 20px;
+}
+
+@keyframes loading-gradient {
+  0% {
+    background-position: 200% 0;
+  }
+
+  50% {
+    background-position: -100% 0;
+  }
+
+  100% {
+    background-position: -200% 0;
+  }
+}
+.result-data p {
+  font-size: 17px;
+  font-weight: 300;
+  line-height: 1.8;
+}
+
+.send_icon {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Add responsive styles */
+@media screen and (max-width: 768px) {
+  .main {
+    padding: 0 10px;
+    min-height: calc(100vh - 60px); /* Account for sidebar when collapsed */
+  }
+
+  .main-container {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 0 10px;
+  }
+
+  .search-box {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    margin-bottom: 10px;
+  }
+
+  .search-box input {
+    font-size: 16px; /* Prevent zoom on iOS */
+    padding: 12px 8px;
+  }
+
+  .result {
+    padding: 0 10px;
+    margin-bottom: 80px; /* Space for fixed search box */
+  }
+
+  .result-title {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px 0;
+  }
+
+  .result-data {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  
+  .result-data p {
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+  }
+
+  .greet {
+    font-size: var(--font-size-heading);
+    text-align: center;
+    padding: 20px 10px;
+  }
+}
+
+/* Add touch-friendly tap targets */
+@media (hover: none) {
+  .search-box img,
+  .nav img,
+  .bottom-item {
+    min-width: 44px;
+    min-height: 44px;
+    padding: 10px;
+  }
+}
+
+.result-data img{
+  height: 30px;
+  width: 30px;
+}
