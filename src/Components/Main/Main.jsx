@@ -1,9 +1,9 @@
 import React, { useContext, useRef, useState } from "react";
 import "./Main.css";
 import { assets } from "../../assets/assets";
-import { Context } from "../../context/Context.jsx";
+import { Context } from "../../Context/Context.jsx";
 
-const main = () => {
+const Main = () => {
     const { setSelectedOption, selectedOption,onSent, recentPrompt, showResult, resultData, loading, setInput, input } = useContext(Context);
 
     // Ref for file input and state for image preview
@@ -145,4 +145,4 @@ const main = () => {
             </div>
         </div>
     )}
-    export default main;
+    export default Main;
