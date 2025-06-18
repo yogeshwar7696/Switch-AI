@@ -4,7 +4,7 @@
 
 ## 🚀 Live Demo
 
-🔗 [View Live on Vercel]((https://switch-ai-nk68.vercel.app/))
+🔗 [View Live on Vercel]([(https://switch-ai-nk68.vercel.app/)](https://switch-ai-nk68.vercel.app/))
 
 ---
 
